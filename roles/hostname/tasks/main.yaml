@@ -1,0 +1,6 @@
+- name: Set hostname
+  replace:
+    path: /etc/hostname
+    regexp: '^{{ansible_hostname}}$'
+    replace: 'dev'
+    backup: yes

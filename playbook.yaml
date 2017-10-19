@@ -1,5 +1,9 @@
 ---
 - hosts: all
+  tasks:
+    # - name: Host variables
+    #   debug:
+    #     msg: "{{ ansible_hostname }}"
   roles:
     - locale
-    
+    - hostname
