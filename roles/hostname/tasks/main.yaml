@@ -1,6 +1,9 @@
-- name: Set hostname
-  replace:
-    path: /etc/hostname
-    regexp: '^{{ansible_hostname}}$'
-    replace: 'dev'
-    backup: yes
+- name: Get new hostname
+  set_fact: new_hostname={{hostvars[inventory_hostname].vars.hostname}}
+
+- name: Get current hostname
+  command: hostname
+  register: old_hostname
+
+- name: Output hostname
+  debug: msg="{{old_hostname.stdout}}, {{inventory_hostname}}, {{new_hostname}}"

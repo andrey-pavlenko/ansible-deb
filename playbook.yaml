@@ -5,5 +5,5 @@
     #   debug:
     #     msg: "{{ ansible_hostname }}"
   roles:
-    - locale
+    # - locale
     - hostname

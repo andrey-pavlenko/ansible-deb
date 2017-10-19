@@ -8,4 +8,4 @@ all:
       vars:
         hostname: dev
         locale: ru_RU.utf8
-        set_timezone: Europe/Moscow
+        timezone: Europe/Moscow
