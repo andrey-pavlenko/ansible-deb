@@ -6,5 +6,5 @@
   command: hostname
   register: old_hostname
 
-- import_tasks: sethostname.yaml
+- include_tasks: sethostname.yaml
   when: old_hostname.stdout != hostvars[inventory_hostname].vars.hostname
