@@ -2,13 +2,9 @@
 #   set_fact: new_hostname={{hostvars[inventory_hostname].vars.hostname}}
 
 - name: Set hostname
+
   command: hostname
   register: old_hostname
 
-- meta: end_play
-  when: old_hostname.stdout == hostvars[inventory_hostname].vars.hostname
-
-- debug: 
-    msg: Change hostname from '{{old_hostname.stdout}}' to '{{hostvars[inventory_hostname].vars.hostname}}'
-
-- command: hostnamectl set-hostname {{hostvars[inventory_hostname].vars.hostname}}
+- import_tasks: sethostname.yaml
+  when: old_hostname.stdout != hostvars[inventory_hostname].vars.hostname
