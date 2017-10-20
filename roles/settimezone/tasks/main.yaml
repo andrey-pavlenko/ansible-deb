@@ -1,3 +1,11 @@
-- name: Set timezone
-  debug:
-    msg: Setting timezone
+---
+- name: Get timezone
+  shell: timedatectl status | grep '{{ ds_timezone }}'
+  register: ds_timezone_present
+  ignore_errors: true
+
+- import_tasks:
+    timedatectl.yaml
+  when: ds_timezone_present.stdout == ""
+
+...

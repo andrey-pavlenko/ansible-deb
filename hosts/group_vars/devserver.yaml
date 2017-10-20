@@ -5,6 +5,4 @@ ds_locale:
   grep_pattern: 'ru_ru\.utf-?8'
   re_pattern: '(?i)ru_ru\.utf-?8'
 ds_timezone: Europe/Moscow
-
-
 ...

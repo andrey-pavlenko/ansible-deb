@@ -3,5 +3,5 @@
   roles:
     - sethostname
     - setlocale
-    #- settimezone
+    - settimezone
 ...
