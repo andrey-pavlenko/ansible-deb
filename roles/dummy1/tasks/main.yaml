@@ -1,3 +1,0 @@
-- name: Dummy 1
-  debug: 
-    msg: Dummy 1

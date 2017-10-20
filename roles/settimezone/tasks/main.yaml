@@ -1,0 +1,3 @@
+- name: Set timezone
+  debug:
+    msg: Setting timezone

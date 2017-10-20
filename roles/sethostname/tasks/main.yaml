@@ -1,0 +1,5 @@
+---
+- name: Set hostname
+  debug: 
+    var: ds_hostname
+...

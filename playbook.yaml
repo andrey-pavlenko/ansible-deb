@@ -1,10 +1,7 @@
 ---
-- hosts: all
-  tasks:
-    # - name: Host variables
-    #   debug:
-    #     msg: "{{ ansible_hostname }}"
+- hosts: devserver
   roles:
-    # - locale
-    - hostname
-    - dummy1
+    - sethostname
+    - settimezone
+    - setlocale
+...
