@@ -1,3 +1,9 @@
-- name: Set locale
-  debug:
-    msg: Setting locale
+---
+- name: Get locales
+  shell: localectl list-locales | grep -i -E '{{ ds_locale.grep_pattern }}'
+  register: ds_locale_present
+  ignore_errors: true
+
+- import_tasks: locale-gen.yaml
+  when: ds_locale_present.stdout == ""
+...
