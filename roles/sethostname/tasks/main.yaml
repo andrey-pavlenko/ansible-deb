@@ -1,5 +1,10 @@
 ---
-- name: Set hostname
-  debug: 
-    var: ds_hostname
+- name: Get hostname
+  command: hostname
+  register: ds_old_hostname
+  
+- import_tasks:
+    sethostname.yaml
+  when: ds_hostname != ds_old_hostname.stdout
+
 ...
