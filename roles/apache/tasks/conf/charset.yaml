@@ -1,0 +1,16 @@
+---
+- name: Disable charset.conf
+  shell: a2disconf charset
+  ignore_errord: yes
+
+- name: Set charset.conf
+  template: 
+    src: ../templates/conf/charset.conf
+    dest: /etc/apache2/conf-available/charset.conf
+    owner: root
+    group: root
+    mode: "u=rw,g=r,o=r"
+
+- name: Enable charset.conf
+  shell: a2enconf charset
+...

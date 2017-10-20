@@ -1,0 +1,12 @@
+---
+- name: Set server-name.conf
+  template: 
+    src: ../templates/conf/server-name.conf
+    dest: /etc/apache2/conf-available/server-name.conf
+    owner: root
+    group: root
+    mode: "u=rw,g=r,o=r"
+
+- name: Enable server-name.conf
+  shell: a2enconf server-name
+...

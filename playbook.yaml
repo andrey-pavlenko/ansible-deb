@@ -4,4 +4,6 @@
     - sethostname
     - setlocale
     - settimezone
+    - update
+    - apache
 ...

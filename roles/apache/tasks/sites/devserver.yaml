@@ -1,0 +1,16 @@
+---
+- name: Disable devserver.dev
+  shell: a2dissite devserver
+  ignore_errors: yes
+
+- name: Set config devserver.dev
+  template: 
+    src: ../templates/sites/devserver.conf
+    dest: /etc/apache2/sites-available/devserver.conf
+    owner: root
+    group: root
+    mode: "u=rw,g=r,o=r"
+
+- name: Enable devserver.dev
+  shell: a2ensite devserver
+...
