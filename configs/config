@@ -1,0 +1,5 @@
+Host debian
+	User root
+	HostName 172.28.128.3
+	IdentitiesOnly yes
+	IdentityFile ~/.ssh/vagrant-debian-root

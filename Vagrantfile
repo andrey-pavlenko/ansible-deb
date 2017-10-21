@@ -74,4 +74,11 @@ Vagrant.configure("2") do |config|
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
+  config.vm.provision "shell" do |s|
+	ssh_pub_key = File.readlines("./configs/vagrant-debian-root.pub").first.strip
+	s.inline = <<-SHELL
+		sudo mkdir -p /root/.ssh
+		sudo echo #{ssh_pub_key} >> /root/.ssh/authorized_keys
+	SHELL
+  end
 end
