@@ -1,10 +1,8 @@
 ---
 - name: Get hostname
   command: hostname
-  register: ds_old_hostname
-  
-- import_tasks:
-    sethostname.yaml
-  when: settings.hostname != ds_old_hostname.stdout
+  register: _hostname
 
+- import_tasks: sethostname.yaml
+  when: hv_options.host != _hostname.stdout
 ...

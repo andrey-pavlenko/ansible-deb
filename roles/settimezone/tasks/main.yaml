@@ -1,11 +1,12 @@
 ---
 - name: Get timezone
-  shell: timedatectl status | grep '{{ settings.timezone }}'
-  register: ds_timezone_present
-  ignore_errors: true
+  shell: timedatectl status
+  register: _timezone
 
-- import_tasks:
-    timedatectl.yaml
-  when: ds_timezone_present.stdout == ""
+- set_fact:
+    _timezone: "{{ _timezone.stdout | regex_search(gv_options.timezone) }}"
+
+- import_tasks: settimezone.yaml
+  when: _timezone == ""
 
 ...

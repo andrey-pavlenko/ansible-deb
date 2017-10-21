@@ -3,7 +3,7 @@
   roles:
     # - sethostname
     # - setlocale
-    # - settimezone
+    - settimezone
     # - update
     # - apache
     # - mysql

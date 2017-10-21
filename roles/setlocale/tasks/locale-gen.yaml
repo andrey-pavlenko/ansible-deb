@@ -1,18 +1,10 @@
 ---
-- name: Enabling locale {{ settings.locale.name }}
+- name: Uncomment /etc/locale.gen for {{ gv_options.locale.name}}
   replace:
     path: /etc/locale.gen
-    regexp: '^#\s*({{ settings.locale.re_pattern }}.*)$'
+    regexp: '^#\s*({{ gv_options.locale.pattern }}.*)$'
     replace: '\1'
-    backup: yes
-
+  
 - name: Generate locales
   shell: locale-gen
-
-- name: Get new locale
-  shell: localectl list-locales | grep -i -E '{{ settings.locale.grep_pattern }}'
-  register: ds_new_locale
-
-- name: Set locale {{ ds_new_locale.stdout }}
-  shell: localectl set-locale LANG={{ ds_new_locale.stdout }}
 ...

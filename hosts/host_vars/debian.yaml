@@ -1,0 +1,5 @@
+---
+hv_options:
+  host: server
+  domain: server.dev
+...

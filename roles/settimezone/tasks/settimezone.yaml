@@ -1,0 +1,4 @@
+---
+- name: Set timezone {{ gv_options.timezone }}
+  shell: timedatectl set-timezone {{ gv_options.timezone }}
+...

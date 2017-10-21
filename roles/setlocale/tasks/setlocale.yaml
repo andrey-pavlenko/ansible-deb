@@ -1,0 +1,14 @@
+---
+- name: Get locale list
+  shell: localectl list-locales
+  register: _locales
+
+- set_fact:
+    _is_locale_exists: "{{ _locales.stdout | regex_search(gv_options.locale.pattern) }}"
+
+- import_tasks: locale-gen.yaml
+  when: _is_locale_exists == ""
+
+- name: Set locale {{ gv_options.locale.name }}
+  shell: localectl set-locale LANG={{ gv_options.locale.name }}
+...

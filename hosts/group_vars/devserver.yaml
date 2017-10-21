@@ -1,10 +1,8 @@
 ---
-settings:
-  hostname: devserver
+gv_options:
   locale: 
-    name: 'ru_RU.UTF-8'
-    grep_pattern: 'ru_ru\.utf-?8'
-    re_pattern: '(?i)ru_ru\.utf-?8'
+    name: 'ru_RU.utf8'
+    pattern: '(?i)ru_ru\.utf-?8'
   timezone: Europe/Moscow
 
 mysql:
