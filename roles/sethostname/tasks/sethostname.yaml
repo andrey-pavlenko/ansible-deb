@@ -1,11 +1,11 @@
 ---
-- name: Set hostname
-  command: hostnamectl set-hostname {{ ds_hostname }}
+- name: Set hostname {{ settings.hostname }}
+  command: hostnamectl set-hostname {{ settings.hostname }}
 
 - name: Replace hostname in /etc/hosts
   replace:
     path: /etc/hosts
     regexp: '\b{{ ds_old_hostname.stdout }}\b'
-    replace: '{{ ds_hostname }}'
+    replace: '{{ settings.hostname }}'
     backup: yes
 ...

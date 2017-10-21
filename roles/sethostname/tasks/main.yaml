@@ -5,6 +5,6 @@
   
 - import_tasks:
     sethostname.yaml
-  when: ds_hostname != ds_old_hostname.stdout
+  when: settings.hostname != ds_old_hostname.stdout
 
 ...

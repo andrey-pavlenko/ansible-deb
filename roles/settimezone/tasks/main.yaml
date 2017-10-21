@@ -1,6 +1,6 @@
 ---
 - name: Get timezone
-  shell: timedatectl status | grep '{{ ds_timezone }}'
+  shell: timedatectl status | grep '{{ settings.timezone }}'
   register: ds_timezone_present
   ignore_errors: true
 

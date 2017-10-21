@@ -1,4 +1,4 @@
 ---
-- name: Set timezone {{ ds_timezone }}
-  shell: timedatectl set-timezone {{ ds_timezone }}
+- name: Set timezone {{ settings.timezone }}
+  shell: timedatectl set-timezone {{ settings.timezone }}
 ...
