@@ -1,7 +1,7 @@
 ---
 - name: Disable charset.conf
   shell: a2disconf charset
-  ignore_errord: yes
+  ignore_errors: yes
 
 - name: Set charset.conf
   template: 
