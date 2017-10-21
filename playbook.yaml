@@ -1,11 +1,14 @@
 ---
 - hosts: devserver
   roles:
-    - sethostname
-    - setlocale
-    - settimezone
-    - update
-    - apache
-    - mysql
-    - php
+    # - sethostname
+    # - setlocale
+    # - settimezone
+    # - update
+    # - apache
+    # - mysql
+    # - php
+    # - phpmyadmin
+    # Сделать всё через vagrant
+    # Внести изменения в localhost: /etc/hosts
 ...
