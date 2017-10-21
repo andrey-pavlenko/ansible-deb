@@ -27,4 +27,6 @@ config.ssh.private_key_path = File.expand_path("../private_key", __FILE__)
 ```
 
 # TODO:
+- How rename machine via Vagrantfile? Duplicate names...
+	- Manually remove from VirtualBox -- still have name default
 - Add versioning to box
