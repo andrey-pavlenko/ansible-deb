@@ -18,4 +18,11 @@
   service: 
     name: apache2
     state: started
+
+
+- name: Add record to ./etc.hosts
+  block:
+    - local_action: lineinfile path=./etc.hosts line="{{ ansible_host }}\t{{ hv_options.domain }}"
+  rescue:
+    - local_action: copy content="{{ ansible_host }}\t{{ hv_options.domain }}" dest=./etc.hosts
 ...

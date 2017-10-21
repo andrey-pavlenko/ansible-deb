@@ -1,5 +1,5 @@
 ---
-- name: Disable devserver.dev
+- name: Disable devserver.conf
   shell: a2dissite devserver
   ignore_errors: yes
 
@@ -11,6 +11,6 @@
     group: root
     mode: "u=rw,g=r,o=r"
 
-- name: Enable devserver.dev
+- name: Enable devserver.conf
   shell: a2ensite devserver
 ...
