@@ -6,4 +6,5 @@
     - settimezone
     - update
     - apache
+    - mysql
 ...

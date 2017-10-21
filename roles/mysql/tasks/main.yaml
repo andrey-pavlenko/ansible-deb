@@ -1,0 +1,22 @@
+---
+- name: Install MySQL
+  apt: name={{ item }} state=present
+  with_items:
+    - mysql-server
+    - mysql-client
+
+- name: Stop MySQL
+  service:
+    name: mysql
+    state: stopped
+
+- import_tasks: allow-network.yaml
+- import_tasks: set-root-password.yaml
+
+- name: Start MySQL
+  service:
+    name: mysql
+    state: started
+
+- import_tasks: network-user.yaml
+...

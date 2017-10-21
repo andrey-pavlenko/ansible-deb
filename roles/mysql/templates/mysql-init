@@ -1,0 +1,2 @@
+UPDATE mysql.user SET Password=PASSWORD('{{ mysql.root_password }}') WHERE User='root';
+FLUSH PRIVILEGES;

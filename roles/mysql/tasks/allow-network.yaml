@@ -1,0 +1,7 @@
+---
+- name: Enabling MySQL network access
+  replace:
+    path: /etc/mysql/mariadb.conf.d/50-server.cnf
+    regexp: '^(bind-address)'
+    replace: '#\1'
+    backup: yes

@@ -6,4 +6,10 @@ settings:
     grep_pattern: 'ru_ru\.utf-?8'
     re_pattern: '(?i)ru_ru\.utf-?8'
   timezone: Europe/Moscow
+
+mysql:
+  root_password: 612284
+  network_user:
+    name: admin
+    password: 612284
 ...
